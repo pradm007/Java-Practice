@@ -1,0 +1,16 @@
+
+public class SimilarNumber {
+
+	public int solution(int n) {
+        // write your code in Java SE 8
+        
+        
+        return n;
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Regex {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		String inputString = scanner.next();
+		
+		boolean matches = Pattern.matches("^.*(a|b).*$", inputString);
+		System.out.println("Result : " + matches);
+		
+		
+	}
+
+}

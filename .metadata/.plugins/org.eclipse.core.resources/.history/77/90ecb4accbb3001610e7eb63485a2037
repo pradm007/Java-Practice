@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Rotatearray {
+
+	public static void main(String[] args) {
+
+		int[] array = {1,2,3,4,5};
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter the number of rotations: ");
+		int k = scanner.nextInt(), temp;
+
+		Rotatearray rotatearray = new Rotatearray();
+		
+		System.out.println("Before rotation: ");
+		rotatearray.printElementOfArray(array);
+		int length = array.length;
+		for(int i=0;i<length;i++) {
+			int new_i = (i + k) % length; //new poistion of array i-th element
+			rotatearray.swap(array[new_i], array[i]);
+		}
+		
+		System.out.println("\nAfter rotation: ");
+		rotatearray.printElementOfArray(array);
+		
+	}
+	
+	void swap(int a, int b) {
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+	
+	void printElementOfArray(int[] array) {
+		for(int i=0;i<array.length;i++)
+			System.out.print(array[i]);
+	}
+
+}

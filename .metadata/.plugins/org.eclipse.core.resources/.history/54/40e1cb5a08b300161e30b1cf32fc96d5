@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Regex {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		int attempts = scanner.nextInt();
+		for (int a = 0; a < attempts; a++) {
+
+			String inputString = scanner.next();
+
+			boolean matches = Pattern.matches("^.*@gmail.com$", inputString);
+			System.out.println("Result : " + matches);
+
+		}
+	}
+
+}

@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ForwardBackwardBraces {
+
+	public int solution(String S) {
+		int indexMatched = 0;
+		ArrayList<Integer> forwardBracesList = new ArrayList<>();
+		ArrayList<Integer> backwardBracesList = new ArrayList<>();
+
+		int counter = 0;
+		for (int i = 0; i < S.length(); i++) {
+			if (S.charAt(i) == '(') {
+				counter++;
+			}
+
+			forwardBracesList.add(counter);
+		}
+
+		counter = 0;// Reset counter
+		for (int i = S.length() - 1; i >= 0; i--) {
+			if (S.charAt(i) == ')') {
+				counter++;
+			}
+
+			backwardBracesList.add(i, counter);
+		}
+
+		System.out.println("Forward brace list : " + forwardBracesList);
+		System.out.println("Backward brace list : " + backwardBracesList);
+
+		for (int i = 0; i < S.length(); i++) {
+			int numberOfForwardBraces = ((Integer) forwardBracesList.get(i)).intValue();
+			int numberOfBackwardBraces = ((Integer) backwardBracesList.get(i)).intValue();
+			if (numberOfForwardBraces == numberOfBackwardBraces) {
+				indexMatched = i;
+				break;
+			}
+		}
+
+		return indexMatched;
+	}
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		String inputString = scanner.next();
+
+		ForwardBackwardBraces forwardBackwardBraces = new ForwardBackwardBraces();
+
+		System.out.println("K : " + forwardBackwardBraces.solution(inputString));
+
+	}
+
+}

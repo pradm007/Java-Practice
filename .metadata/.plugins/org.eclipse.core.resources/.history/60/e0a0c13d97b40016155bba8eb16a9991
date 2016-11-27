@@ -1,0 +1,42 @@
+import java.util.HashMap;
+
+public class SimilarNumber {
+
+	public int solution(int n) {
+        // write your code in Java SE 8
+		HashMap<Integer, Integer> digitsCounterHashMap = new HashMap<>();
+		
+		int num = n, digit = 0, numberOfDigits = 0;
+		while (num!=0) {
+			digit = num%10;
+			if (digitsCounterHashMap.get((Integer)digit) == null) {
+				digitsCounterHashMap.put((Integer)digit, (Integer)0);
+			} else {
+				int valueAtThePosition = digitsCounterHashMap.get((Integer)digit).intValue();
+				digitsCounterHashMap.put((Integer)digit, (Integer)(valueAtThePosition+1));
+			}
+			numberOfDigits++;
+			
+			num = num/10;
+		}
+		
+		System.out.println("HashMap : " + digitsCounterHashMap);
+		
+        
+        return n;
+    }
+	
+	public int factorial(int n) {
+		if (n == 1){
+			return 1;
+		} else {
+			return n * factorial(n-1);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Regex {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> listOfFirstName = new ArrayList<>();
+		
+		Scanner scanner = new Scanner(System.in);
+		int attempts = scanner.nextInt();
+		for (int a = 0; a < attempts; a++) {
+
+			String inputFirstName = scanner.next();
+			String inputEmail = scanner.next();
+
+			boolean matches = Pattern.matches("^.*@gmail.com$", inputEmail);
+			
+			if (matches) {
+				listOfFirstName.add(inputFirstName);
+			}
+
+		}
+	}
+
+}
